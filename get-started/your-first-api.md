@@ -44,9 +44,9 @@ Let's look at our keyless API
             "require_session": false,
             "raw_body_only": false
           }
-        ]
-  },
-    "driver": "otto",
+        ],
+        "driver": "otto"
+    },
     "proxy": {
         "listen_path": "/keyless-test/",
         "target_url": "http://httpbin.org",

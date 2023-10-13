@@ -37,9 +37,9 @@ Content-Type: application/json
                 "require_session": false,
                 "raw_body_only": false
             }
-        ]
+        ],
+        "driver": "otto"
     },
-    "driver": "otto",
     "proxy": {
         "listen_path": "/my-keyless-test/",
         "target_url": "http://httpbin.org",
