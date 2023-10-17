@@ -47,3 +47,39 @@ Content-Type: application/json
     }
 }
 
+### 
+# Unprotected
+http://localhost:8080/keyless-test/get
+Foo: bar
+
+###
+# Protected (Allowed)
+http://localhost:8080/tyk-api-test/get
+Authorization: my-custom-key
+
+###
+# Protected (Not Allowed)
+http://localhost:8080/tyk-api-test/get
+Authorization: non-valid-key
+
+### 
+# Get list of keys
+http://localhost:8080/tyk/keys
+X-Tyk-Authorization: foo
+
+### 
+# Create master Key
+POST http://localhost:8080/tyk/keys/my-custom-key HTTP/1.1
+X-Tyk-Authorization: foo
+Content-Type: application/json
+
+{
+    "apply_policies": [],
+    "org_id" : "",
+    "expires": 0,
+    "allowance": 0,
+    "per": 0,
+    "quota_max": 0,
+    "rate": 0,
+    "access_rights": {}
+}
