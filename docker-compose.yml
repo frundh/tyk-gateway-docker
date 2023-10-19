@@ -21,6 +21,10 @@ services:
       - tyk
     ports:
       - 6379:6379
+  httpbin:
+    image: kennethreitz/httpbin
+    networks:
+      - tyk
 
 networks:
   tyk:
